@@ -84,7 +84,7 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
                 decoration: BoxDecoration(
                   color: _selectedLanguage != null
                       ? AppColors.primary
-                      : AppColors.primary.withOpacity(0.5),
+                      : AppColors.primary.withValues(alpha: 0.5),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Center(
@@ -94,7 +94,7 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
                     fontWeight: FontWeight.w600,
                     color: _selectedLanguage != null
                         ? AppColors.white
-                        : AppColors.white.withOpacity(0.5),
+                        : AppColors.white.withValues(alpha: 0.5),
                   ),
                 ),
               ),

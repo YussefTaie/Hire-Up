@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hireup/core/theme/app_colors.dart';
-import 'package:hireup/features/auth/sign_up.dart';
+import 'package:hireup/features/auth/login_create_acc.dart';
 import 'package:hireup/shared/widgets/custom_button.dart';
 import 'package:hireup/shared/widgets/custom_text.dart';
 import 'onboarding_slide.dart';
@@ -100,7 +100,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const SignUp(),
+                          builder: (context) => const LoginCreateAcc(),
                         ),
                       );
                     }
@@ -112,7 +112,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const SignUp(),
+                        builder: (context) => const LoginCreateAcc(),
                       ),
                     );
                   },
