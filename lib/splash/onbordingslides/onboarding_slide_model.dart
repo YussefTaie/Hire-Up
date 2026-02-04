@@ -4,3 +4,4 @@ class OnboardingSlideModel {
 
   const OnboardingSlideModel({required this.title, required this.image});
 }
+

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hireup/core/theme/app_colors.dart';
 import 'package:hireup/shared/widgets/custom_text.dart';
+import 'package:hireup/splash/onbordingslides/onboarding_page.dart';
 import 'package:hireup/splash/widgets/custom_language_selection.dart';
 
 class LanguageSelectionPage extends StatefulWidget {
@@ -72,7 +73,7 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const LanguageSelectionPage(),
+                      builder: (context) => const OnboardingPage(),
                     ),
                   );
                 }
