@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hireup/core/theme/app_colors.dart';
 import 'package:hireup/features/auth/login_page.dart';
+import 'package:hireup/features/auth/role_selection_page.dart';
 import 'package:hireup/shared/widgets/custom_button.dart';
 import 'package:hireup/shared/widgets/custom_fotter.dart';
 import 'package:hireup/shared/widgets/custom_header.dart';
@@ -60,7 +61,30 @@ class _SignupPageState extends State<SignupPage> {
                       isPassword: true,
                     ),
                     Gap(16),
-                    CustomButton(text: 'إنشاء حساب', onTap: () {}),
+                    CustomButton(
+                      text: 'إنشاء حساب',
+                      onTap: () {
+                        if (_emailController.text.isNotEmpty &&
+                            _passwordController.text.isNotEmpty &&
+                            _confirmPasswordController.text.isNotEmpty) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const RoleSelectionPage(),
+                            ),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'الرجاء إدخال البريد الإلكتروني وكلمة المرور',
+                                style: TextStyle(color: AppColors.white),
+                              ),
+                            ),
+                          );
+                        }
+                      },
+                    ),
                     Gap(16),
                     CustomFotter(),
                     Gap(16),

@@ -1,24 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:gap/gap.dart';
 import 'package:hireup/core/theme/app_colors.dart';
 import 'package:hireup/shared/widgets/custom_text.dart';
 
-class CustomLanguageSelection extends StatelessWidget {
+class CustomSelection extends StatelessWidget {
   final String language;
   final String? selectedLanguage;
   final ValueChanged<String?> onChanged;
+  final double width;
+  final double height;
+  final String? image;
 
-  const CustomLanguageSelection({
+  const CustomSelection({
     super.key,
     required this.language,
     required this.selectedLanguage,
     required this.onChanged,
+    this.width = 172,
+    this.height = 70,
+    this.image,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 172,
-      height: 70,
+      width: width,
+      height: height,
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -32,6 +40,7 @@ class CustomLanguageSelection extends StatelessWidget {
         ],
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Radio<String>(
             value: language,
@@ -39,11 +48,17 @@ class CustomLanguageSelection extends StatelessWidget {
             activeColor: AppColors.primary,
             onChanged: onChanged,
           ),
-          CustomText(
-            text: language,
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: AppColors.black,
+          Row(
+            children: [
+              CustomText(
+                text: language,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: AppColors.black,
+              ),
+              Gap(10),
+              image == null ? SizedBox.shrink() : SvgPicture.asset(image!),
+            ],
           ),
         ],
       ),

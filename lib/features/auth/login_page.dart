@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hireup/core/theme/app_colors.dart';
+import 'package:hireup/features/auth/role_selection_page.dart';
 import 'package:hireup/features/auth/signup_page.dart';
 import 'package:hireup/features/auth/widgets/check_box.dart';
 import 'package:hireup/shared/widgets/custom_button.dart';
@@ -83,7 +84,29 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     Gap(16),
-                    CustomButton(text: 'تسجيل الدخول', onTap: () {}),
+                    CustomButton(
+                      text: 'تسجيل الدخول',
+                      onTap: () {
+                        if (_emailController.text.isNotEmpty &&
+                            _passwordController.text.isNotEmpty) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const RoleSelectionPage(),
+                            ),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'الرجاء إدخال البريد الإلكتروني وكلمة المرور',
+                                style: TextStyle(color: AppColors.white),
+                              ),
+                            ),
+                          );
+                        }
+                      },
+                    ),
                     Gap(16),
                     CustomFotter(),
                     Gap(16),

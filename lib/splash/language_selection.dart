@@ -3,7 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:hireup/core/theme/app_colors.dart';
 import 'package:hireup/shared/widgets/custom_text.dart';
 import 'package:hireup/splash/onbordingslides/onboarding_page.dart';
-import 'package:hireup/splash/widgets/custom_language_selection.dart';
+import 'package:hireup/splash/widgets/custom_selection.dart';
 
 class LanguageSelectionPage extends StatefulWidget {
   const LanguageSelectionPage({super.key});
@@ -44,7 +44,7 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CustomLanguageSelection(
+                    CustomSelection(
                       language: 'English',
                       selectedLanguage: _selectedLanguage,
                       onChanged: (value) {
@@ -53,7 +53,7 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
                         });
                       },
                     ),
-                    CustomLanguageSelection(
+                    CustomSelection(
                       language: 'العربية',
                       selectedLanguage: _selectedLanguage,
                       onChanged: (value) {
